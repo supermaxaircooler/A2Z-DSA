@@ -1,40 +1,18 @@
 class Solution {
 public:
     bool check(vector<int>& nums) {
+        int len = nums.size();
+        int count_breaks = 0; // Count the number of order breaks
 
-        int len = size(nums);
-
-        int start = 0;
-        int last = len-1;
-        // bool startchange = true;
-        // bool endchange = true;
-
-        while(start < len-1){
-            if(nums[start +1] >= nums[start]){
-                start++;        
+        for (int i = 0; i < len; i++) {
+            if (nums[i] > nums[(i + 1) % len]) {
+                count_breaks++;
             }
-            else break;
+            if (count_breaks > 1) {
+                return false; // More than one rotation point, so return false
+            }
         }
 
-        while(last > 0){
-            if(nums[last] >= nums[last-1]) last--;
-            else break;
-
-        }
-
-        // while(start!= last && (startchange || endchange)){
-        //     if(nums[start +1] >= nums[start]){
-        //         start++;        
-        //     }
-        //     else !startchange;
-        //     if(nums[last] >= nums[last-1]) last--;
-        //     else !endchange;
-
-        // }
-        if(start == len - 1 && last == 0) return true;
-        if(start+1 == last && nums[0]>= nums[len-1]) return true;
-        else return false;
-
-
+        return true; // It has at most one break, so it can be a rotated sorted array
     }
 };
