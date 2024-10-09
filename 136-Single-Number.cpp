@@ -4,10 +4,10 @@ public:
 
         int xxor = 0;
 
-        int len = nums.size();
 
-        for(int i = 0 ; i < len ; i++){
-            xxor ^= nums[i];
+
+        for(int val : nums){
+            xxor ^= val;
         }
         return xxor;
         
