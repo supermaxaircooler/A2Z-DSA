@@ -2,6 +2,8 @@ class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
 
+        // Transpose the matrix, then reverse the order of the columns
+
         int n = matrix.size();
         int m = matrix[0].size();
 
