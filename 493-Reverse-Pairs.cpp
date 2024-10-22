@@ -22,7 +22,7 @@ void merge(vector<int>& arr, int low, int mid, int high , int& count) {
     int second = 0; 
 
     while(first < n1 && second < n2){
-        if(left[first] > 2* (long)right[second]){             // comparing the copied arrays first for nums[i] > 2* nums[j] , then proceeding with the merge sort
+        if(left[first] > 2* (long)right[second]){
 
             count = count + n1 - first;
             // first++;
