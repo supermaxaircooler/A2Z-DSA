@@ -1,5 +1,9 @@
 class Solution {
 public:
+
+
+// same concept as koko eating problem
+
     int smallestDivisor(vector<int>& nums, int threshold) {
 
 
